@@ -10,5 +10,9 @@ class UserPremium extends User{
             $this->discount = 65;
         }
     }
+
+    public function getDiscount(){
+        return $this->discount;
+    }
 }
 ?>

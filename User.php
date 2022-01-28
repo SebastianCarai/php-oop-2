@@ -8,7 +8,7 @@ class User{
     
     public $email;
 
-    private $discount;
+    protected $discount;
 
     private $cart =[];
 
