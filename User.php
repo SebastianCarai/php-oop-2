@@ -1,5 +1,9 @@
 <?php 
+require_once __DIR__ . '/CreditCard.php';
+
 class User{
+    use CreditCard;
+
     public $name;
 
     public $lastname;
@@ -15,7 +19,11 @@ class User{
     private $money_spent = 0;
 
     public function __construct($_name, $_lastname, $_email){
-        $this->name = $_name;
+        if(strlen($_name) > 1){
+            $this->name = $_name;
+        }else{
+            throw new Exception ('strlen($_name) must be > 1');
+        }
         $this->lastname = $_lastname;
         $this->email = $_email;
     }

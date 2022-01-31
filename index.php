@@ -20,7 +20,13 @@ $sweatpants_nike->brand= 'Nike';
 $users_array=[];
 
 // User
-$Mario = new User('Mario' , 'Rossi', 'mario@gmail.com');
+try{
+    $Mario = new User('M' , 'Rossi', 'mario@gmail.com');    
+} catch(Exception $e){
+    error_log($e);
+
+    echo '<h1 style="text-align:center">Il sito è momentaneamente in manutenazione. Torneremo presto</h1>';
+}
 $Mario->age = 20;
 $Mario->setDiscount();
 $Mario->addToCart($cargo_bershka);
